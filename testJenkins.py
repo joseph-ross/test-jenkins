@@ -1,7 +1,9 @@
 import sys
-print(sys.path)
 sys.path.append('/Users/joeross/Documents')
 sys.path.append('/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages')
+sys.path.append('/usr/local/bin')
+print(sys.path)
+
 
 import gcloud
 from google.cloud import datastore
