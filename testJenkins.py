@@ -1,19 +1,20 @@
 import sys
 print(sys.path)
-# sys.path.append("/path/to/your/dir")
+sys.path.append('/Users/joeross/Documents')
+sys.path.append('/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages')
 
-# import gcloud
-# from google.cloud import datastore
+import gcloud
+from google.cloud import datastore
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
-# 	print("Credentials :: " + sys.argv[1])
-# 	print("Word :: " + sys.argv[2])
+	print("Credentials :: " + sys.argv[1])
+	print("Word :: " + sys.argv[2])
 
-# 	ds_client = datastore.Client(project='leanplum',credentials=sys.argv[1])
-# 	query = ds_client.query(kind='App')
-# 	appKey = ds_client.key('App',int(5631331257679872))
-# 	query.add_filter('app','=',appKey)
-# 	qList = list(query.fetch())
+	ds_client = datastore.Client(project='leanplum',credentials=sys.argv[1])
+	query = ds_client.query(kind='App')
+	appKey = ds_client.key('App',int(5631331257679872))
+	query.add_filter('app','=',appKey)
+	qList = list(query.fetch())
 
-# 	print(qList[0]['name'])
+	print(qList[0]['name'])
