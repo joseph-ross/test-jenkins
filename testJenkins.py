@@ -1,4 +1,6 @@
 import sys
+import os
+sys.path.append(os.environ['WORKSPACE'])
 sys.path.append('/Users/joeross/Documents')
 sys.path.append('/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages')
 sys.path.append('/usr/local/bin')
