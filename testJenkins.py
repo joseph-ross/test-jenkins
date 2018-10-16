@@ -15,6 +15,7 @@ sys.path = ['/Users/joeross/Documents/GitHub/test-jenkins', '/Users/joeross/Docu
 
 import gcloud
 from google.cloud import datastore
+import google.oauth2.credentials
 
 if __name__ == '__main__':
 
@@ -22,7 +23,8 @@ if __name__ == '__main__':
 	print("Credentials :: " + sys.argv[1])
 	print("Word :: " + sys.argv[2])
 
-	ds_client = datastore.Client(project='leanplum',credentials=sys.argv[1])
+        credentials = google.oauth2.credentials.Credentials(sys.argv[1])
+	ds_client = datastore.Client(project='leanplum',credentials=credentials)
 	query = ds_client.query(kind='App')
 	appKey = ds_client.key('App',int(5631331257679872))
 	query.add_filter('app','=',appKey)
