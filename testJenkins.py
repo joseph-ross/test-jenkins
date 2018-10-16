@@ -23,7 +23,7 @@ if __name__ == '__main__':
 	print("Credentials :: " + sys.argv[1])
 	print("Word :: " + sys.argv[2])
 
-        credentials = google.oauth2.credentials.Credentials(sys.argv[1])
+        credentials = google.oauth2.credentials.Credentials(sys.argv[1].rstrip().lstrip())
 	ds_client = datastore.Client(project='leanplum',credentials=credentials)
 	query = ds_client.query(kind='App')
 	appKey = ds_client.key('App',int(5631331257679872))
